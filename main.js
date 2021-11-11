@@ -1,6 +1,6 @@
 function grid(size) {
     const containerWidth = 600;
-    let width = Math.floor(containerWidth / size, 2);
+    let width = Math.floor(containerWidth / size);
     const container = document.querySelector(".container");
     container.style.width = `${width * size}px`
     let div;
