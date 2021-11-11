@@ -1,0 +1,26 @@
+.container {
+    border: 4px solid rgb(97, 4, 40);
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-child {
+    background-color: rgb(139, 112, 112);
+    /*transition: all 2s;*/
+}
+
+.grid-child-hover {
+    background-color: rgb(32, 99, 131);
+}
+
+#reset {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-top: 40px;
+    font-size: large;
+    font-family: monospace;
+}
