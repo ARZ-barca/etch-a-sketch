@@ -1,13 +1,26 @@
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <script src="main.js" defer></script>
-        <meta charset="utf-8">
-        <title>Etch-a-scetch</title>
-    </head>
-    <body>
-        <div class="container"></div>
-        <button id="reset">RESET</button>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <main>
+        <h1>Etch-a-Sketch</h1>
+        <div class="grid"></div>
+        <input type="color" class="color-picker">
+        <button type="button" class="mode">color mode</button>
+        <button type="button" class="eraser">eraser</button>
+        <button type="button" class="clear">clear</button>
+        <button type="button" class="set-background">change background</button>
+        <input type="range">
+      </main>
+    </div>
+  </body>
 </html>

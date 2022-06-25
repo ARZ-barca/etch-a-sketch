@@ -1,26 +1,49 @@
-.container {
-    border: 4px solid rgb(97, 4, 40);
-    width: 600px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
+:root {
+  --grid-width-height: 1000px;
+  --grid-background: rgb(204, 229, 230);
 }
 
-.grid-child {
-    background-color: rgb(139, 112, 112);
-    /*transition: all 2s;*/
+/*
+    reset
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.grid-child-hover {
-    background-color: rgb(32, 99, 131);
+/*
+    grid
+*/
+
+.page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#reset {
-    display: block;
-    width: 120px;
-    height: 120px;
-    margin: auto;
-    margin-top: 40px;
-    font-size: large;
-    font-family: monospace;
+.grid {
+  width: var(--grid-width-height);
+  height: var(--grid-width-height);
+  background-color: var(--grid-background);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.grid-row {
+  display: flex;
+  flex: 1;
+}
+
+.grid-item {
+  flex: 1;
+}
+
+.color-picker {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
 }
