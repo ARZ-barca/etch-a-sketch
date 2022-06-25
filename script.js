@@ -38,10 +38,19 @@ function main() {
 
 main()
 */
-let defaultColor = "white"
-let color = "rgb(8, 8, 8)"
+let backgroundColor = "rgb(204, 229, 230)";
+let color = "rgb(8, 8, 8)";
+let mode = 'color';
 
 const grid = document.querySelector('.grid');
+const colorPicker = document.querySelector('.color-picker');
+const rainbowMode = document.querySelector('.rainbow-mode');
+const colorMode = document.querySelector('.color-mode')
+const eraserMode = document.querySelector('.eraser-mode')
+const modes = document.querySelectorAll('.mode')
+
+// default grid
+createGrid(grid, 20);
 
 // creates a grid with given size inside grid container
 function createGrid(grid, size) {
@@ -61,17 +70,13 @@ function createGrid(grid, size) {
     })
 }
 
-// default grid
-createGrid(grid, 20);
-
 // check for mousebutton being down
 let mouseDown;
 
 document.body.addEventListener('mousedown', () => mouseDown = true, {capture: true});
 document.body.addEventListener('mouseup', () => mouseDown = false);
 
-
-
+//
 let gridItems = document.querySelectorAll('.grid-item');
 
 gridItems.forEach(item => {
@@ -82,14 +87,51 @@ gridItems.forEach(item => {
 function changeColor(e) {
     // doesn't do anything if mouse isnot down
     if (!mouseDown) return;
-    this.style.backgroundColor = color
-    console.log(e)
+    if (mode === 'color') {
+        this.style.backgroundColor = color;
+    } else if (mode === 'rainbow') {
+        this.style.backgroundColor = getRandomColor();
+    } else if (mode === 'eraser') {
+        this.style.backgroundColor = backgroundColor;
+    }
 }
 
+// selects a random rgb value for rainbow mode
+function getRandomColor() {
+    let red = Math.floor(Math.random()*255);
+    let green = Math.floor(Math.random()*255);
+    let blue = Math.floor(Math.random()*255);
+    return `rgb(${red}, ${green}, ${blue})`
+}
 
+// change the color with color picker
+colorPicker.addEventListener('change', e => {
+    color = e.target.value;
+})
 
+// change the mode to color
+colorMode.addEventListener('click', e => {
+    mode = 'color';
+    clearSelection()
+    e.target.classList.add('selected');
+})
 
+// change the mode to rainbow
+rainbowMode.addEventListener('click', e => {
+    mode = 'rainbow';
+    clearSelection()
+    e.target.classList.add('selected');
+})
 
+// change the mode to rainbow
+eraserMode.addEventListener('click', e => {
+    mode = 'eraser';
+    clearSelection()
+    e.target.classList.add('selected');
+})
 
-
-
+function clearSelection() {
+    modes.forEach(mode => {
+        mode.classList.remove('selected')
+    })
+}

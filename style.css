@@ -1,6 +1,12 @@
+/*
+    custom properties
+*/
+
 :root {
-  --grid-width-height: 1000px;
+  --grid-width-height: 450px;
   --grid-background: rgb(204, 229, 230);
+  --options-height: 40px;
+  --options-width: 150px;
 }
 
 /*
@@ -14,19 +20,42 @@
 }
 
 /*
-    grid
+    page structure
 */
 
 .page {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
+.page > * {
+  display: block;
+  margin: auto;
+}
+
+.page > *:not(:first-child):not(:last-child) {
+  margin-bottom: 30px;
+}
+
+/*
+    typography
+*/
+
+.page h1 {
+  height: 80px;
+  line-height: 80px;
+}
+
+
+
+/*
+    grid 
+*/
+
 .grid {
-  width: var(--grid-width-height);
-  height: var(--grid-width-height);
+  width: min(var(--grid-width-height), 100vw);
+  height: min(var(--grid-width-height), 100vh);
   background-color: var(--grid-background);
   display: flex;
   flex-wrap: wrap;
@@ -42,8 +71,26 @@
   flex: 1;
 }
 
+/*
+    different modes and colors and what not
+*/
+
 .color-picker {
-  width: 100px;
-  height: 100px;
-  padding: 10px;
+  padding: 0;
+  border: none;
+}
+
+.mode:hover, .color-picker:hover, .clear:hover,
+.set-background:hover, .size:hover {
+  box-shadow: 0 0 5px 5px rgb(219, 213, 213);
+}
+
+.mode, .color-picker, .clear,
+.set-background, .size {
+  width: var(--options-width);
+  height: var(--options-height);
+}
+
+.mode.selected {
+  box-shadow: 0 0 5px 5px rgb(145, 206, 214);
 }
