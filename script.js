@@ -135,3 +135,5 @@ function clearSelection() {
         mode.classList.remove('selected')
     })
 }
+
+//continue with clear button
