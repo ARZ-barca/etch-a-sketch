@@ -80,6 +80,10 @@
   border: none;
 }
 
+.background-color-picker {
+  display: none;
+}
+
 .mode:hover, .color-picker:hover, .clear:hover,
 .set-background:hover, .size:hover {
   box-shadow: 0 0 5px 5px rgb(219, 213, 213);
@@ -92,5 +96,17 @@
 }
 
 .mode.selected {
-  box-shadow: 0 0 5px 5px rgb(145, 206, 214);
+  box-shadow: 0 0 5px 5px #91ced6;
+}
+
+.range-container {
+  position: relative;
+}
+
+.range-container output {
+  position: absolute;
+  width: var(--options-width);
+  top: -15px;
+  left: 0;
+  text-align: center;
 }

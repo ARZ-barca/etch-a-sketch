@@ -18,8 +18,15 @@
       <button type="button" class="rainbow-mode mode">rainbow mode</button>
       <button type="button" class="eraser-mode mode">eraser</button>
       <button type="button" class="clear">clear</button>
-      <button type="button" class="set-background">change background</button>
-      <input type="range" class="size">
+      <button type="button" class="set-background"><label for="background-color-picker">change background</label></button>
+      <input type="color" class="background-color-picker" id="background-color-picker">
+      <div class="range-container">
+        <input type="range" class="size" id="size" min="10" max="100" step="1" value="20">
+        <output for="size">20</output>
+      </div>
     </div>
   </body>
 </html>
+
+
+
