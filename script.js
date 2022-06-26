@@ -11,12 +11,19 @@ const modes = document.querySelectorAll('.mode')
 const clear = document.querySelector('.clear')
 const setBackground = document.querySelector('.background-color-picker')
 const size = document.querySelector('.size')
+const output = document.querySelector('output')
+
+const defaultSize = 20;
 
 let gridItems;
 
 // reseting the color pickers
 colorPicker.value = color
 setBackground.value = backgroundColor
+
+// setting the output default value
+output.value = getSizeString(defaultSize)
+size.value = defaultSize
 
 // default grid
 createGrid(grid, 20);
@@ -118,15 +125,23 @@ clear.addEventListener('click', e => {
 // change background button
 setBackground.addEventListener('change', e => {
     backgroundColor = e.target.value;
-    grid.style.backgroundColor = backgroundColor
+    grid.style.backgroundColor = backgroundColor;
 })
 
 // create new grid with range slider
 size.addEventListener('change', e => {
-    grid.innerHTML = ''
-    createGrid(grid, e.target.value)
+    grid.innerHTML = '';
+    createGrid(grid, e.target.value);
+    output.value = getSizeString(e.target.value);
 })
 
+size.addEventListener('input', e => {
+    output.value = getSizeString(e.target.value);
+})
+
+function getSizeString(value) {
+    return `${value} x ${value}`;
+}
 
 
 
