@@ -195,3 +195,34 @@ footer {
 }
 
 
+@media (width <= 500px) {
+  .page {
+    padding-bottom: 60px;
+  }
+  footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  footer a {
+    font-size: 0.9rem;
+    color: var(--font-color);
+    text-decoration: none;
+  }
+
+  .github-logo {
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .github-username {
+    line-height: 40px;
+  }
+}
+
+
+
