@@ -161,3 +161,37 @@ output {
     top: 25px;
   }
 }
+
+
+footer {
+  display: none;
+}
+
+@media (width > 500px) {
+  footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: end;
+    padding-right: 30px;
+  }
+
+  footer a {
+    font-size: 0.9rem;
+    color: var(--font-color);
+    text-decoration: none;
+  }
+
+  .github-logo {
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .github-username {
+    line-height: 40px;
+  }
+}
+
+
