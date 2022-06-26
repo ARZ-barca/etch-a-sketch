@@ -4,10 +4,15 @@
 
 :root {
   --grid-width-height: 450px;
-  --grid-background: rgb(204, 229, 230);
+  --grid-background: rgb(242, 248, 248);
   --options-height: 40px;
   --options-width: 150px;
   --header-height: 80px;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*
@@ -49,17 +54,42 @@
   align-items: center;
 }
 
-/*
-    typography
-*/
-
 .page h1 {
   height: var(--header-height);
   line-height: var(--header-height);
   margin: auto;
 }
 
+/*
+    typography and colors
+*/
 
+.page {
+  background-color: rgb(209, 220, 231);
+}
+
+.grid {
+  background-color: var(--grid-background);
+}
+
+button {
+  font-family: inherit;
+  color: #556b88;
+  background-color: rgb(203, 240, 233);
+  border: 0.2px solid rgb(146, 208, 219);
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 2.7rem;
+  font-weight: 100;
+  color: #5c728f;
+}
+
+output {
+  color: #2e5257;
+  font-weight: 300;
+}
 
 /*
     grid 
@@ -68,7 +98,6 @@
 .grid {
   width: min(var(--grid-width-height), 100vw);
   height: min(var(--grid-width-height), 100vh);
-  background-color: var(--grid-background);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -99,7 +128,7 @@
 
 .mode:hover, .color-picker:hover, .clear:hover,
 .set-background:hover, .size:hover {
-  box-shadow: 0 0 5px 5px rgb(219, 213, 213);
+  box-shadow: 0 0 5px 5px rgb(189, 197, 202);
 }
 
 .mode, .color-picker, .clear,
@@ -109,7 +138,7 @@
 }
 
 .mode.selected {
-  box-shadow: 0 0 5px 5px #91ced6;
+  box-shadow: 0 0 5px 5px #87bdc4;
 }
 
 .range-container {
