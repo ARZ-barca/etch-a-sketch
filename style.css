@@ -12,7 +12,7 @@
 
 html {
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /*
@@ -126,13 +126,19 @@ output {
   display: none;
 }
 
-.mode:hover, .color-picker:hover, .clear:hover,
-.set-background:hover, .size:hover {
+.mode:hover,
+.color-picker:hover,
+.clear:hover,
+.set-background:hover,
+.size:hover {
   box-shadow: 0 0 5px 5px rgb(189, 197, 202);
 }
 
-.mode, .color-picker, .clear,
-.set-background, .size {
+.mode,
+.color-picker,
+.clear,
+.set-background,
+.size {
   width: var(--options-width);
   height: var(--options-height);
 }
@@ -161,68 +167,3 @@ output {
     top: 25px;
   }
 }
-
-
-footer {
-  display: none;
-}
-
-@media (width > 500px) {
-  footer {
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    justify-content: end;
-    padding-right: 30px;
-  }
-
-  footer a {
-    font-size: 0.9rem;
-    color: var(--font-color);
-    text-decoration: none;
-  }
-
-  .github-logo {
-    margin-left: 15px;
-    width: 40px;
-    height: 40px;
-  }
-
-  .github-username {
-    line-height: 40px;
-  }
-}
-
-
-@media (width <= 500px) {
-  .page {
-    padding-bottom: 60px;
-  }
-  footer {
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    justify-content: center;
-  }
-
-  footer a {
-    font-size: 0.9rem;
-    color: var(--font-color);
-    text-decoration: none;
-  }
-
-  .github-logo {
-    margin-left: 15px;
-    width: 40px;
-    height: 40px;
-  }
-
-  .github-username {
-    line-height: 40px;
-  }
-}
-
-
-
